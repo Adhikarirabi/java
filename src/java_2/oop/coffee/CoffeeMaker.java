@@ -1,6 +1,6 @@
 package java_2.oop.coffee;
 
-class CoffeeMaker {
+class CoffeeMaker extends Machine {
 //	In addition to the functions of any Machine, the CoffeeMachine also has an ability to brew coffee.
 
 	/*
@@ -14,6 +14,30 @@ class CoffeeMaker {
 			-Any additional functions of a machine. (Use the Machine abstraction for this CoffeeMaker).
  	*/
 
+	private  String brewType;
+
+	public String getBrewType() {
+		return brewType;
+	}
+	public CoffeeMaker(String type, String brand, boolean on, String brewType) {
+		super(type, brand, on);
+		this.brewType = brewType;
+	}
+
+	@Override
+	public void powerOn() {
+		 on = true;
+		System.out.println("Turned On");
+	}
+
+	@Override
+	public void powerOff() {
+		on = false;
+		System.out.println("Turned Off");
+	}
+
+
+
 	Cup brew(CoffeeBeans coffee, Cup cup) {
 
 		/*
@@ -24,6 +48,22 @@ class CoffeeMaker {
 
 			mark the coffee as being brewed, and fill the cup to capacity.  return the Cup to the user.
 		*/
+		if (!on){
+			System.out.println("Turned On");
+		} else {
+			if (!coffee.isRoasted()){
+				System.out.println("Roast the Coffee Please");
+			} else{
+				if (cup.fill > 0){
+					System.out.println("Get a Cup");
+				} else{
+					coffee.isBrewed();
+					cup.fill = cup.capacity;
+					cup.fluidContents = coffee.getBeanName();
+					System.out.println("Coffee "+ coffee.getBeanName() + " in " + cup.type);
+				}
+			}
+		}
 
 		return cup;
 	}

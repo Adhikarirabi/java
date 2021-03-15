@@ -11,12 +11,44 @@ public class CoffeeApp {
 	-
  */
 
-		CoffeeBeans java = new CoffeeBeans();
-		Cup mug = new Cup();
-		CoffeeMaker keureg = new CoffeeMaker();
+		CoffeeBeans java = new CoffeeBeans("Java", "Hawaiii", "Spring Flavor");
+		CoffeeBeans Mocha = new CoffeeBeans("Mocha", "Japan", "Ocean Flavor");
+		CoffeeBeans Arabica = new CoffeeBeans("Arabica", "Dubai", "Robusta Flavor");
+		CoffeeBeans Liberica = new CoffeeBeans("Liberica", "Veitnam", "Earthy Flavor");
+
+
+		Cup mug = new Cup(16,"Mug");
+		Cup PaperCup = new Cup(8,"Black");
+		Cup SteeleCup = new Cup(32,"Cappuchino");
+		Cup GlassCup = new Cup(16, "ColdBrew");
+
+
+
+		CoffeeMaker keureg = new CoffeeMaker("Coffee Brewer", "Keureg", true, "Dark");
+		keureg.powerOn();
+		java.roast();
+		Mocha.roast();
+		Arabica.roast();
+		Liberica.roast();
+
+
 //		keureg.powerOn();  (Defined in the Machine Interface)
 		mug = keureg.brew(java,mug);
-		mug.drink();
-//		keureg.powerOff(); (Defined in the Machine Interface);
+		mug.drink(1);
+		mug.getFill();
+
+		PaperCup = keureg.brew(Mocha,PaperCup);
+		PaperCup.drink(4);
+		PaperCup.getFill();
+
+		SteeleCup = keureg.brew(Arabica,SteeleCup);
+		SteeleCup.drink(3);
+		SteeleCup.getFill();
+
+		GlassCup = keureg.brew(Liberica,GlassCup);
+		GlassCup.drink(2);
+		GlassCup.getFill();
+
+
 	}
 }
