@@ -12,6 +12,22 @@ public class MonkeyApp {
 
         You are NOT allowed to move the Monkey class outside of the MonkeyCage class.  Keep it exactly where it is.
         */
+		List<MonkeyCage.Monkey> list = new ArrayList<>(Arrays.asList());
+		MonkeyCage cage = new MonkeyCage(list);
+		MonkeyCage.Monkey monkey1 = cage.new Monkey("Ram", true);
+		MonkeyCage.Monkey monkey2 = cage.new Monkey("Shyam", false);
+		MonkeyCage.Monkey monkey3 = cage.new Monkey("Hari", true );
+		cage.addMonkey(monkey1);
+		cage.addMonkey(monkey2);
+		cage.addMonkey(monkey3);
+
+		if (monkeyCage.areMonkeysSmiling()) {
+			System.out.println("monkeys are smiling.");
+		} else {
+			System.out.println("monkeys are not smiling.");
+		}
+
+
 
 	}
 }
