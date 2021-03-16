@@ -17,6 +17,29 @@ public class RainforestApp {
 		choose your own characteristics and methods to model).
 
 */
+		RainforestCreature Snake = new Snake("Snake", "Amazon", "green", new String[]{"Monkey", "Mouse", "eagle", "deer", "fish"});
+		System.out.println(Snake);
+		Snake.eat();
+
+		RainforestCreature Comodo = new Comodo("Comodo", "Amazon", "grey", new String[]{"bird", "lizard", "eagle", "deer", "fish"});
+		System.out.println(Comodo);
+		Comodo.eat();
+
+		RainforestCreature Aligator = new Aligator("Aligator", "Amazon", "green", new String[]{"Zebra", "fish", "waterBuffalo", "WaterSnake"});
+		System.out.println(Aligator);
+		Aligator.eat();
+
+		RainforestCreature Bobcat = new Bobcat("Bobcat", "Amazon", "Yellow", new String[]{"Monkey", "Mouse", "eagle", "pig", "fish"});
+		System.out.println(Bobcat);
+		Bobcat.eat();
+
+		RainforestCreature Jaguar = new Anaconda("Jaguar", "Amazon", "Black", new String[]{"Monkey", "Mouse", "birds", "deer", "fish"});
+		System.out.println(Jaguar);
+		Jaguar.eat();
+
+		RainforestCreature Mouse = new Mouse("Anaconda", "Amazon", "white", new String[]{"egg", "lizard", "insect", "flowers", "fruits"});
+		System.out.println(Mouse);
+		Mouse.eat();
 	}
 
 }
