@@ -1,7 +1,9 @@
 package java_3.serial;
 
 
-public class Message {
+import java.io.Serializable;
+
+public class Message implements Serializable {
 	private int id;
 	private String msgTxt;
 
